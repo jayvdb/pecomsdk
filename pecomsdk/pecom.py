@@ -149,7 +149,7 @@ class PecomCabinet(object):
             raise PecomCabinetException(self.__ch.c.errstr())
         else:
             http_code = self.__ch.getinfo(pycurl.HTTP_CODE)
-            if http_code <> 200:
+            if http_code != 200:
                 raise PecomCabinetException("HTTP Error code: %d" % http_code)
             else:
                 result = json.loads(result)
